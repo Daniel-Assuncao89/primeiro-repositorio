@@ -7,10 +7,14 @@ const nomeUsuario = prompt("Olá, usuario, qual o seu nome?")
 let num = Number(prompt("olá, "+ nomeUsuario + "." + " Digite algum número, por favor")) // transforma em number
 console.log(typeof num) //typeof mostra o tipo da variavel
 
-//const sucessor = num++
+//const sucessor = num++ 
 //const antecessor = num - 1
 
 //alert("O sucessor de " + num + " é " + sucessor)
 //alert("O antecessor de " + num + " é " + antecessor)
-console.log(num++)
+console.log(num++) 
 console.log(num)
+console.log(++num)
+
+//num++ é operador de pós incremento.
+//++num operador pré incremento.
