@@ -17,44 +17,59 @@ Código Condição de pagamento
  * *No Cartão
  */
 
-let precoProduto = parseFloat(prompt('Qual o preço do produto?'))
-let precoFinal = 0
+let continuarOperacao = 'S'
+while(continuarOperacao == 'S'){
+    let precoProduto = parseFloat(prompt('Qual o preço do produto?'))
+    let precoFinal = 0
 
-while(isNaN(precoProduto) || precoProduto <= 0){
-    alert('Preço invalido, digite o valor sem caracteres especiais (letras ou acentos)')
-    precoProduto = parseFloat(prompt('Qual o preço do produto?'))
-    
-}
-const metodoDePagamento = prompt(`
-Informe o método de pagamento:
-Digite 1 para pagamento em dinheiro
-Digite 2 para pagamento em cheque
-Digite 3 para pagamento com cartão
-`)
-
-console.log(precoProduto)
-console.log(metodoDePagamento)
-
-if (metodoDePagamento == 1 || metodoDePagamento == 2) {
-
-    precoFinal = precoProduto * 0.9
-    alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
-
-}else if(metodoDePagamento == 3){
-    const quantidadeDeParcelas = parseInt(prompt(`Informe a quantidade de parcelas`))
-    if(quantidadeDeParcelas == 1){
-        precoFinal = precoProduto * 0.85
-        alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
-    }else if(quantidadeDeParcelas == 2){
-        precoFinal = precoProduto
-        alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
-    }else if(quantidadeDeParcelas >= 3 && quantidadeDeParcelas <= 10){
-        precoFinal = precoProduto * 1.10
-        alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
-    }else {
-        alert('Quantidade de parcelas invalida')
+    while( isNaN(precoProduto) || precoProduto <= 0 ){
+        alert('Preço invalido, digite o valor sem caracteres especiais (letras ou acentos)')
+        precoProduto = parseFloat(prompt('Qual o preço do produto?'))
+        
     }
 
-}else {
-    alert('Numero invalido')
+    let metodoDePagamento = parseInt(prompt(`
+    Informe o método de pagamento:
+    Digite 1 para pagamento em dinheiro
+    Digite 2 para pagamento em cheque
+    Digite 3 para pagamento com cartão
+    `))
+
+    console.log(precoProduto)
+    console.log(metodoDePagamento)
+
+    while(metodoDePagamento > 3 || metodoDePagamento < 1 || isNaN(metodoDePagamento) ){
+        alert('Metodo de pagamento invalido!')
+        metodoDePagamento = parseInt(prompt(`
+        Informe o método de pagamento:
+        Digite 1 para pagamento em dinheiro
+        Digite 2 para pagamento em cheque
+        Digite 3 para pagamento com cartão`))
+    }
+
+    if (metodoDePagamento == 1 || metodoDePagamento == 2) {
+
+        precoFinal = precoProduto * 0.9
+        alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
+
+    }else if(metodoDePagamento == 3){
+        let quantidadeDeParcelas = parseInt(prompt(`Informe a quantidade de parcelas`))
+
+        while(quantidadeDeParcelas > 10 || quantidadeDeParcelas < 1 || isNaN(quantidadeDeParcelas)){
+            alert('Numero de parcelas Invalida!')
+            quantidadeDeParcelas = parseInt(prompt(`Informe a quantidade de parcelas`))
+        }
+        if(quantidadeDeParcelas == 1){
+            precoFinal = precoProduto * 0.85
+            alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
+        }else if(quantidadeDeParcelas == 2){
+            precoFinal = precoProduto
+            alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
+        }else if(quantidadeDeParcelas >= 3){
+            precoFinal = precoProduto * 1.10
+            alert(`O preço final do pagamento é ${precoFinal.toFixed(2)}`)
+        }
+
+    }
+    continuarOperacao = prompt('Deseja realizar nova compra?').toLocaleUpperCase()
 }
