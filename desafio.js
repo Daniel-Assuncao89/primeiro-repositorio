@@ -17,14 +17,20 @@ Código Condição de pagamento
  * *No Cartão
  */
 
-const precoProduto = parseFloat(prompt('Qual o preço do produto?'))
+let precoProduto = parseFloat(prompt('Qual o preço do produto?'))
+let precoFinal = 0
+
+while(isNaN(precoProduto) || precoProduto <= 0){
+    alert('Preço invalido, digite o valor sem caracteres especiais (letras ou acentos)')
+    precoProduto = parseFloat(prompt('Qual o preço do produto?'))
+    
+}
 const metodoDePagamento = prompt(`
 Informe o método de pagamento:
 Digite 1 para pagamento em dinheiro
 Digite 2 para pagamento em cheque
 Digite 3 para pagamento com cartão
 `)
-let precoFinal = 0
 
 console.log(precoProduto)
 console.log(metodoDePagamento)

@@ -1,10 +1,10 @@
 const tipoDeCombustivel = prompt(`
 Selecione qual o tipo de Combustivel
-1) Alcool
-2) Gasolina`)
+A) Alcool
+G) Gasolina`).toUpperCase()
 let valorFinal = 0
 
-if(tipoDeCombustivel == 1){
+if(tipoDeCombustivel == 'A'){
     const alcool = parseFloat(prompt('Quantidade de Litros de alcool?'))
     if (alcool <= 25){
         valorFinal = (alcool * 1.90) * 0.98
