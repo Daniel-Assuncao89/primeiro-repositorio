@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Faça um algoritmo para adicionar 20 valores em um array e depois imprima-os no HTML. Evite que o array possua valores duplicados
+         */
+        let valores = new Array(20)
+        let comparacao = 0
+
+        for(let i = 0; i < valores.length; i++){
+            valores[i] = parseFloat(prompt(`Insira o valor ${i + 1}`))
+        }
+        for(let i = 0; i < valores.length; i++){
+            comparacao = valores[i]
+            for(let y = 1; y < valores.length; y++){
+                if(comparacao == valores[y]){
+                    alert(`Valor repetido ${valores[y]}`)
+                    valores[y] = parseFloat(prompt('Inserir um valor diferente dos demais'))
+                }
+            }
+        }
+    </script>
+</body>
+</html>

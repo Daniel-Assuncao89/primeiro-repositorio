@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*Criar um programa que pergunte quantos produtos um cliente pegou e depois peça para que ele informe
+        o preço de cada produto. Ao recuperar possuir o valor de cada produto, faça a soma total da compra e
+        informe o maior e o menor preço que foi informado. */
+
+        const qtdProdutos = parseInt(prompt('Informe a quantidade de produto'))
+
+        const precosProdutos = []
+        let soma = 0
+        let maiorValor = 0
+        let menorValor = 100
+        let maiorV = 0
+        let menorV = 100
+
+        for (let i = 0; i < qtdProdutos; i++) {
+            precosProdutos[i] = parseFloat(prompt(`Inserir o valor do produto ${i + 1}:`))
+        }
+
+        for (let i = 0; i < precosProdutos.length; i++) {
+            const valor = precosProdutos[i]
+            soma += valor
+        }
+
+        alert(`O preço final a pagar é de ${soma}`)
+
+        for (let i = 0; i < qtdProdutos; i++) {
+            if(maiorValor <= precosProdutos[i]){
+                maiorValor = precosProdutos[i]
+            }
+        }
+
+        for (let i = 0; i < qtdProdutos; i++) {
+            if(menorValor >= precosProdutos[i]){
+                menorValor = precosProdutos[i]
+            }
+        }
+        (`Maior valor ${maiorValor} e o menor valor ${menorValor}`)
+
+        
+        for(let preco of precosProdutos){
+           if(preco > maiorV){
+            maiorV = preco
+           } 
+        }
+
+        for(let preco of precosProdutos){
+           if(preco < menorV){
+            menorV = preco
+           } 
+        }
+
+        alert(`Maior ${maiorV} e Menor ${menorV} utilizando o FOR OF`)
+
+    </script>
+</body>
+</html>
