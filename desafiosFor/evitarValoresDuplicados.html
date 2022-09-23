@@ -19,13 +19,16 @@
         }
         for(let i = 0; i < valores.length; i++){
             comparacao = valores[i]
-            for(let y = 1; y < valores.length; y++){
+
+            for(let y = i + 1; y < valores.length; y++){
+
                 if(comparacao == valores[y]){
                     alert(`Valor repetido ${valores[y]}`)
                     valores[y] = parseFloat(prompt('Inserir um valor diferente dos demais'))
                 }
             }
         }
+        alert(`Array: ${valores}`)
     </script>
 </body>
 </html>
