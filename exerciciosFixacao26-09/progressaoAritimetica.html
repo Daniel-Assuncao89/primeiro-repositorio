@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 6. Escreva um algoritmo que leia um valor inicial A e uma razão R e imprima uma seqüência em P.A. contendo 10 valores */
+
+         const valorInicial = parseFloat(prompt('Valor inicial A'))
+         const razao = parseInt(prompt('Razão'))
+         //formula P.A -> an = a1 +(n-1) * r
+         let pa = valorInicial + (10 - 1) * razao
+         alert(`Valor da progressão aritimetica: ${pa}`)
+    </script>
+</body>
+</html>
