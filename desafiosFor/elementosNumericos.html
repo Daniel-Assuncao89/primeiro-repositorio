@@ -12,17 +12,24 @@
         let resto
         let numeroPar = 0
         let numeroImpar = 0
+        const par = []
+        const impar = []
         for (const i of numeros) {
             resto = i % 2
             if(resto == 0){
                 numeroPar++
+                par.push(i)
             }else{
                 numeroImpar++
+                impar.push(i)
             }
         }
         alert(`
         Quantidade de numeros pares: ${numeroPar}
-        Quantidade de numeros Impares: ${numeroImpar}`)
+        Numeros Pares: ${par}
+        Quantidade de numeros Impares: ${numeroImpar}
+        Numeros Impares: ${impar}
+        `)
     </script>
 </body>
 </html>

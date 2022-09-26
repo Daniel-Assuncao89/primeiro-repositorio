@@ -22,7 +22,8 @@
         let menorV = 100
 
         for (let i = 0; i < qtdProdutos; i++) {
-            precosProdutos[i] = parseFloat(prompt(`Inserir o valor do produto ${i + 1}:`))
+            //precosProdutos[i] = parseFloat(prompt(`Inserir o valor do produto ${i + 1}:`))
+            precosProdutos.push(parseFloat(prompt(`Inserir o valor do produto ${i + 1}:`))) //equivalente a declaração de cima
         }
 
         for (let i = 0; i < precosProdutos.length; i++) {
@@ -43,7 +44,7 @@
                 menorValor = precosProdutos[i]
             }
         }
-        (`Maior valor ${maiorValor} e o menor valor ${menorValor}`)
+        alert(`Maior valor ${maiorValor} e o menor valor ${menorValor}`)
 
         
         for(let preco of precosProdutos){
