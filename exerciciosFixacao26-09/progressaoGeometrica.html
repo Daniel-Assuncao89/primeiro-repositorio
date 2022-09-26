@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * 7. Escreva um algoritmo que leia um valor inicial A e uma razão q e imprima uma seqüência em P.G. contendo 10 valores.
+         * formula pg -> an = a1 * q **n-1
+         */
+         const valorInicial = parseFloat(prompt('Valor inicial A'))
+         const razao = parseInt(prompt('Razão Q'))
+         //alert(`${razao**(10-1)}`)
+         let pg = valorInicial * razao**(10-1)
+         alert(`Valor da PG: ${pg}`)
+    </script>
+</body>
+</html>
