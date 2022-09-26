@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Crie um código que receba 3 valores do comprimento de um triângulo e depois mostre um alert informando se o triângulo é equilátero, isóceles ou escaleno */
+        const lados = []
+         for(let i = 0; i < 3 ; i++ ){
+            lados [i] = parseFloat(prompt('Valor lado'))
+         }
+         const comparador = lados[0];
+         let contadorIgualdade = 0
+         for (const i of lados) {
+            if(comparador == i){
+                contadorIgualdade++
+            }
+         }
+         switch(contadorIgualdade){
+            case 2:
+                alert('Triangulo Isóceles')
+                break;
+            case 3:
+                alert('Triangulo Equilatero')
+                break;
+            default:
+                alert('Escaleno')
+                break;
+         }
+    </script>
+</body>
+</html>
