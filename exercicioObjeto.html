@@ -13,33 +13,33 @@
          * Cada produto possui Nome, Marca, uma foto (link de uma imagem na internet), preço unitario e a quantidade de produtos em estoque.
          * Ao receber essas informações dos produtos, imprima no HTML essas informações de cada produto e o produto entre o preço e a quantidade de produtos em estoque (preço total) */
 
-         let produto = {
-            nome: [],
-            marca:[],
-            link: [],
-            preco:[],
-            qtdProdutos:[],
-            precoTotal: [],
+
+        let precoTotal = 0;
+
+         let produtos = {
+            nome: '',
+            marca: '',
+            link: '',
+            preco: 0,
+            qtdProdutos: 0
          }
                   
-         for(let i = 0; i < 15; i++){
-            produto.nome [i] = prompt(`Qual o nome do Produto ${i+1}?`)
-            produto.marca [i] = prompt(`Qual a marca do Produto ${i+1}?`)
-            produto.link [i] = prompt(`Link da imagem do produto ${i+1}`)
-            produto.preco [i] = prompt(`Valor do produto ${i+1}?`)
-            produto.qtdProdutos [i] = prompt('Quantidade de produtos no estoque')
+         for(let i = 0; i < 2; i++){
+            produtos.nome = prompt(`Qual o nome do Produto ${i+1}?`)
+            produtos.marca = prompt(`Qual a marca do Produto ${i+1}?`)
+            produtos.link = prompt(`Link da imagem do produto ${i+1}`)
+            produtos.preco = prompt(`Valor do produto ${i+1}?`)
+            produtos.qtdProdutos = prompt('Quantidade de produtos no estoque')
+            precoTotal = produtos.preco * produtos.qtdProdutos
+            document.write(`
+            <p> Nome Produto: ${produtos.nome} </p>
+            <p>   Marca: ${produtos.marca} </p>
+            <p>   Link: <img src="${produtos.link}"> </p>
+            <p>    Preço: ${produtos.preco} </p>
+            <p>    Estoque: ${produtos.qtdProdutos} </p>
+            <p>Valor Total No estoque: ${precoTotal} </p>
+                `)
          }
-
-         for(let i = 0; i < 15; i++){
-            produto.precoTotal [i] = produto.preco[i] * produto.qtdProdutos[i]
-         }
-
-         document.write(`<p> Nome Produto: ${produto.nome} </p>`)
-         document.write(`<p> Marca: ${produto.marca}</p>`)
-         document.write(`<p> Link: ${produto.link}</p>`)
-         document.write(`<p> Preço: ${produto.preco}</p>`)
-         document.write(`<p> Quantidade Produtos: ${produto.qtdProdutos}</p>`)
-         document.write(`<p> Valor Total: ${produto.precoTotal}</p>`)
 
     </script>
 </body>
