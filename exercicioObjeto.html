@@ -27,7 +27,7 @@
             precoTotal: 0,
          }
                   
-         for(let i = 0; i < 2; i++){
+         for(let i = 0; i < 15; i++){
             produtos.nome = prompt(`Qual o nome do Produto ${i+1}?`)
             produtos.marca = prompt(`Qual a marca do Produto ${i+1}?`)
             produtos.link = prompt(`Link da imagem do produto ${i+1}`)
@@ -38,7 +38,7 @@
             document.write(`
             <p> Nome Produto: ${armazenamento[i].nome} </p>
             <p> Marca: ${armazenamento[i].marca} </p>
-            <p> Imagem: <img src="${armazenamento[i].link} alt="produto" width="200"> </p>
+            <p> Imagem: <img src="${armazenamento[i].link}" alt="produto" width="200"> </p>
             <p> Preço: ${armazenamento[i].preco} </p>
             <p> Estoque: ${armazenamento[i].qtdProdutos} </p>
             <p> Valor Total No estoque: ${armazenamento[i].precoTotal} </p>
@@ -47,6 +47,5 @@
          }
          console.log(armazenamento)
     </script>
-    
 </body>
 </html>
