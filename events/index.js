@@ -19,8 +19,9 @@ function mostrarAlerta() {
 function fecharAlerta(){
     const divAlerta = document.getElementById('alerta')
     divAlerta.classList.remove('mostrar')
+    let alteracao = document.getElementById('p')
     count ++;
-    btnFechar.innerHTML = count;
+    alteracao.innerHTML = `Voce ja clicou ${count} vezes aqui`;
 }
 
 const btnMostrar = document.getElementById('mostrar')
