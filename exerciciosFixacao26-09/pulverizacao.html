@@ -14,7 +14,58 @@
         Tipo 2 – gafanhotos R$ 100,00 por acre;
         Tipo 3 – broca R$ 150,00 por acre;
         Tipo 4 – todos acima R$ 250,00 por acre.
-        Se a área a ser pulverizada for superior a 1000 acres, o fazendeiro tem um desconto de 5%. Em adição, qualquer fazendeiro cujo custo for maior do que R$ 750,00 tem um desconto de 10% sobre o valor que ultrapassar os R$ 750,00. Caso ambos os descontos se aplicam o da área é calculado antes. Fazer um algoritmo que leia: o tipo de pulverização (1 a 4) e área a ser pulverizada; e imprima o valor a ser pago. */
+        Se a área a ser pulverizada for superior a 1000 acres, o fazendeiro tem um desconto de 5%. Em adição, qualquer fazendeiro cujo custo for maior do que R$ 750,00 tem um desconto de 10% sobre o valor que ultrapassar os R$ 750,00. Caso ambos os descontos se aplicam o da área é calculado antes. Fazer um algoritmo que leia: o tipo de pulverização (1 a 4) e área a ser pulverizada; e imprima o valor a ser pago. 
+        
+        area > 1000 = 5% desconto ; valores > 750,00 = 10% desconto sobre o valor que ultrapassa os 750;
+        caso ambos se apliquem o da area é calculado primeiro
+        */
+       function tipoPulverizacao(tipo){
+        switch (tipo) {
+            case '1':
+                return 50
+                break;
+            case '2':
+                return 100
+                break;
+            case '3':
+                return 150
+                break;
+            case '4':
+                return 250
+                break;
+            default:
+                return 'Invalido'
+                break;
+        }
+       }
+
+       const area = parseInt(prompt('Quantoas acres serão pulverizados?'))
+       const tipo1 = tipoPulverizacao((prompt(`Escolha o tipo de pulverização:
+        Tipo 1 – ervas daninhas R$ 50,00 por acre;
+        Tipo 2 – gafanhotos R$ 100,00 por acre;
+        Tipo 3 – broca R$ 150,00 por acre;
+        Tipo 4 – todos acima R$ 250,00 por acre.`)))
+        console.log(tipo1)
+       let valor = tipo1 * area
+       let desconto = 0
+       let descontoMaior = 0
+       if(area > 1000 && valor > 750){
+            desconto = valor * 0.05
+            valor -= desconto
+            descontoMaior = valor - 750
+            if (descontoMaior > 0){
+                let valorFinal = descontoMaior
+                descontoMaior *= 0.1
+                valorFinal -= descontoMaior
+                alert(`Valor Final para pagamento com 2 descontos ${valorFinal}`)
+            }
+        } else if (area < 1000 && valor > 750){
+            desconto = valor * 0.1
+            valor -= desconto
+            alert(`Valor Final para pagamento com 10% de desconto é de${valor}`)
+        } else {
+            alert(`Valor Final para pagamento sem desconto ${valor}`)
+        }
     </script>
 </body>
 </html>
